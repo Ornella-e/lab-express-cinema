@@ -81,14 +81,15 @@ const movies = [
     }
   ];
   
+const async = require('hbs/lib/async');
   // Add here the script that will be run to actually seed the database (feel free to refer to the previous lesson)
   
   const Movie = require('../models/Movie.model');
 require ('../db');
 
-const movieSeed= async ()=>{
-    try{
-        await Movie.create (movies);
+const movieSeed = async () => {
+    try {
+        await Movie.create(movies);
         console.log (`${movies.length} movies created`)
     } catch (error){
         console.log (error);
